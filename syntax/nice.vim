@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Nice
 " Maintainer:   Yaheni Akhotnikau <eao197@yahoo.com>
-" URL:		http://eao197.narod.ru/projects.htm#nice-vim
+" URL:		http://eao197.narod.ru/projects/nice.vim
 " Last Change:  2008 Feb 07
 
 " Please check :help nice.vim for comments on some of the options available.
@@ -20,6 +20,8 @@ else
   command! -nargs=+ NiceHiLink hi def link <args>
 endif
 
+setlocal iskeyword+=-
+
 syn keyword niceClass       class interface implements extends enum override
 syn keyword nicePackages    import package
 syn keyword niceAssertions  assert requires ensures
@@ -27,8 +29,9 @@ syn match   niceAssertions  "!assert"
 syn match   niceAssertions  "?assert"
 syn keyword niceExpressions for if else while do true false alike this super
 syn keyword niceExpressions instanceof synchronized new null break continue
-syn keyword niceStatements  return var let
+syn keyword niceStatements  return var let try catch finally
 syn keyword niceModifiers   public private protected static final transient
+syn keyword niceModifiers   public-read private-write
 syn keyword niceModifiers   volatile const native inline abstract
 
 syn keyword niceBasicTypes  byte char short int long float double String void boolean
